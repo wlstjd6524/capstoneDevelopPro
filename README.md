@@ -88,7 +88,7 @@ Wi-Fi CSI 기반 기술은 추가적인 센서 없이 Wi-Fi 신호만으로 실�
 
 
 ## 🔨 프로젝트 아키텍처
-![프로그램 아키텍처](https://github.com/user-attachments/assets/a5017301-e603-4ab6-8e7a-a293f43f2a5a)
+![프로그램 아키텍처](https://github.com/user-attachments/assets/1540de3a-f109-4024-9577-e9309c779e90)
 
 
 ## 📍 기대효과 및 활용방안
@@ -108,75 +108,75 @@ Wi-Fi CSI 기반 기술은 추가적인 센서 없이 Wi-Fi 신호만으로 실�
 ## ✍ 프로젝트 작업 내용
 **⚽ 환경구성**
 - CSI 데이터 수신기
-![CSI 데이터 수신기](https://github.com/user-attachments/assets/3f43c15a-7a49-43dd-b5f4-9acf9371d6fb)
+![CSI 데이터 수신기](https://github.com/user-attachments/assets/58879f79-e54b-40d0-8f0b-c511ea85b0f4)
 
 - CSI 데이터 캡처기
-![CSI 데이터 캡쳐기](https://github.com/user-attachments/assets/382a7343-5ce0-4e53-9d32-1df4fd926762)
+![CSI 데이터 캡쳐기](https://github.com/user-attachments/assets/c8e46fa1-ea37-420b-84c0-509a749aa767)
 
 - Wi-Fi AP 환경
-![Wi-Fi AP 환경](https://github.com/user-attachments/assets/81d6aaf5-092f-44e0-892a-7780ef0d8ec0)
+![Wi-Fi AP 환경](https://github.com/user-attachments/assets/d63cd34f-c204-4cf5-b0da-3a62b5595ceb)
 
 - 핑 pc 와 캡처기 pc 환경구성
-![핑 pc 와 캡쳐기 pc 환경구성](https://github.com/user-attachments/assets/d771d25c-5a59-421e-b827-0e39a8e023f2)
+![핑 pc 와 캡쳐기 pc 환경구성](https://github.com/user-attachments/assets/8b739259-8593-4454-913d-5414b0270d63)
 
 - 캡처기 pc 환경
-![캡쳐기 pc 환경구성](https://github.com/user-attachments/assets/c4e0df8c-9f43-4a2a-af5e-7ec4e38efa73)
+![캡쳐기 pc 환경구성](https://github.com/user-attachments/assets/97363b36-e539-4131-a169-79caff6f4855)
 
 - LoS 환경구현
-![LoS 환경](https://github.com/user-attachments/assets/21afba96-03d7-46b5-94dc-4e335a445b4b)
+![LoS 환경](https://github.com/user-attachments/assets/3ccd7c18-1436-4afb-b080-4235721d10de)
 
 - NLoS 환경구현
-![NLoS 환경](https://github.com/user-attachments/assets/811a2173-c407-4d97-82c7-73a95145bcdc)
+![NLoS 환경](https://github.com/user-attachments/assets/10ad96d0-de0e-4e8d-9d7f-bb3bcdb1bb77)
 
 **⚾ 데이터 전처리 및 학습**
 - 행동에 대한 결과값이 저장된 .pcap 파일을 전처리 과정을 겪어 csv 로 변환 <br>
-![01](https://github.com/user-attachments/assets/8585708e-76ea-461e-a97f-8255de91552f)
+![01](https://github.com/user-attachments/assets/b3038050-405f-4e0d-b2d7-d5069562180c)
 
 - 여러개의 csv 파일을 통합하여 균형있게 통합한 totalCsv 파일로 결합
 - 또한 NVIDIA CUDA 및 cuDNN 과 TensorFlow_GPU 버전을 맞추어 GPU 기반 학습을 할 수 있는 라이브러리 활성화
-![02](https://github.com/user-attachments/assets/8bf6f219-48f7-4a06-9ea6-30912276eb6d)
+![02](https://github.com/user-attachments/assets/f621e7a8-aac8-4de0-b7e2-9402826c9c48)
 
 - Epoch 50 으로 설정 후 GPU 기반 학습 시작
-![03](https://github.com/user-attachments/assets/17a2473c-0294-45fd-ac5f-7c08e7e005bf)
+![03](https://github.com/user-attachments/assets/cc40661b-00af-4f19-a758-58ac27cc410d)
 
 - LoS/NLoS 모델 학습 결과
-![04](https://github.com/user-attachments/assets/af8dc319-2611-4253-83ed-67c95ab7fef2)
+![04](https://github.com/user-attachments/assets/cc6df214-c3f3-458b-af6a-0477b81ac69e)
 
 - HAR (LoS/NLoS 환경별 행동 인식) 모델 학습 결과
 1) LoS 환경 HAR 모델
-![05](https://github.com/user-attachments/assets/2dac1f4d-abc8-4b05-8a8b-6fead9541d43)
+![05](https://github.com/user-attachments/assets/f8545883-fc05-4925-8e71-f17fb5555e67)
 
 2) NLoS 환경 HAR 모델
-![06](https://github.com/user-attachments/assets/4c41ae42-9f3a-41b5-9354-d21665387479)
+![06](https://github.com/user-attachments/assets/7fca5865-db4d-4482-ac9c-3cc6ee118d42)
 
 **!! 다음 3개의 모델 중 학습율이 가장 높은 초기 모델 (LoS/NLoS) 모델을 채택하여 사용하였습니다. !!**
 
 **🥎 학습해서 나온 모델 성능을 파일화**
-![07](https://github.com/user-attachments/assets/6d6f5175-2fd0-4329-9b8f-d10e072418ee)
+![07](https://github.com/user-attachments/assets/66474869-ae05-42ad-bc03-720316a26d07)
 
 **🏀 서버실행**
 - Server IP 및 Server Port 설정
-![07-1](https://github.com/user-attachments/assets/d86cdf86-e962-424d-9c54-d4e49c6fdbb3)
+![07-1](https://github.com/user-attachments/assets/e30d97a8-fcd0-4c64-8ba5-1cc322c67f0c)
 
 - Python 기반 Server 실행
-![09](https://github.com/user-attachments/assets/4a966bf9-291e-4312-8fc4-600be1b4e8f4)
+![09](https://github.com/user-attachments/assets/fbe7ab51-af51-4912-8d9d-f3d259e5a233)
 
 
 ## 💾 프로젝트 결과
 - 애플리케이션 테스팅을 위한 에뮬레이터 ADB Data 연결
-![08](https://github.com/user-attachments/assets/28ab81d6-6495-47ec-ab36-80e5c1ee13c8)
+![08](https://github.com/user-attachments/assets/e254fa87-910c-4809-9b99-6feeac7ceb12)
 
 - 애플리케이션 <br>
-![10](https://github.com/user-attachments/assets/8b8deaf9-11f4-495f-b03d-9d1686cc9a5c)
+![10](https://github.com/user-attachments/assets/2b21390e-3e55-49ec-95ef-66bc8a9cb32b)
 
 - 서버 연결 버튼을 눌렀을 때 애플리케이션에서 연동된 모습 (왼쪽 상단 시간 체크 엄수) <br>
-![11](https://github.com/user-attachments/assets/2c11576d-9b80-462a-91b0-a1da21b03d27)
+![11](https://github.com/user-attachments/assets/cb18c98d-ed84-4186-900f-2a4680771b65)
 
 - 서버에서는 애플리케이션에 응답을 받은 후 실시간으로 행동을 받은 파일을 앱으로 전송하는 모습
-![13](https://github.com/user-attachments/assets/49ee4a98-d589-4a6b-8623-ef2da8053b56)
+![13](https://github.com/user-attachments/assets/532aee3e-848d-4fc3-ac4f-01b0d91ecef6)
 
 - 1분이 지나서 움직임이 없는 상태를 읽고 앱에서 알림 전송 p.s) 앱에서 알람이 정상적으로 작동하는지 체크하기 위해 테스트 동안 시간값을 1시간 -> 1분 값으로 설정. <br>
-![12](https://github.com/user-attachments/assets/1ae53d61-00ce-4d34-a593-483e4bad98ea)
+![12](https://github.com/user-attachments/assets/8498d357-00c4-41c6-a00e-60dc4df1db21)
 
 
 ## 🔎 프로젝트 한계 및 개선사항
